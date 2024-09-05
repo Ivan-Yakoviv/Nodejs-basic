@@ -25,10 +25,21 @@ fs.readFile(filePath, (err, fileContent) => {
 //   console.log(fileContent);
 // });
 
-// import fs from 'fs/promises';
-// import path from 'node:path';
+import fs from 'fs/promises';
+import path from 'node:path';
 
-// Написання (зміна) файлу
+// Читання файлу
+// const filePath = path.join(process.cwd(), 'src', 'text.txt');
+// (async () => {
+//   try {
+//     const data = await fs.readFile(filePath, 'utf8');
+//     console.log('Вміст файлу:', data);
+//   } catch (err) {
+//     console.error('Помилка читання файлу:', err);
+//   }
+// })();
+
+// Запис даних у файл
 // const filePath = path.join(process.cwd(), 'src', 'text.txt');
 // (async () => {
 //   try {
@@ -37,6 +48,18 @@ fs.readFile(filePath, (err, fileContent) => {
 //     console.log('Text successfuly writed to file');
 //   } catch (error) {
 //     console.error('Error', error);
+//   }
+// })();
+
+// Додавання даних в кінець файлу
+// const filePath = path.join(process.cwd(), 'src', 'text.txt');
+// (async () => {
+//   const data = 'Це дані, які ми додаємо до файлу.';
+//   try {
+//     await fs.appendFile(filePath, data, 'utf8');
+//     console.log('Дані успішно додані до файлу.');
+//   } catch (err) {
+//     console.error('Помилка додавання даних до файлу:', err);
 //   }
 // })();
 
@@ -77,3 +100,31 @@ fs.readFile(filePath, (err, fileContent) => {
 //     console.error('Error', error);
 //   }
 // })();
+
+// Отримуємо список файлів і каталогів у поточному каталозі
+(async () => {
+  try {
+    const files = await fs.readdir('./src');
+    console.log('Список файлів і каталогів:', files);
+  } catch (err) {
+    console.error('Помилка отримання списку файлів і каталогів:', err);
+  }
+})();
+
+// Перевіряємо доступність файлу або каталогу за вказаним шляхом
+(async () => {
+  const projectPath = path.join(process.cwd(), 'src');
+  try {
+    await fs.access(projectPath);
+    console.log(`Файл або каталог '${projectPath}' доступний.`);
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      console.log(`Файл або каталог '${projectPath}' не існує.`);
+    } else {
+      console.error(
+        `Помилка перевірки доступності файлу або каталогу '${projectPath}':`,
+        err,
+      );
+    }
+  }
+})();
