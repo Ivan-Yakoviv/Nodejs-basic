@@ -1,4 +1,5 @@
 import express from 'express';
+import PinoHttp from 'pino-http';
 
 const app = express();
 
@@ -44,3 +45,11 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+app.use(
+  PinoHttp({
+    transport: {
+      target: 'pino-pretty',
+    },
+  }),
+);
