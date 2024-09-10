@@ -53,3 +53,7 @@ app.use(
     },
   }),
 );
+
+// import { startServer } from './server';
+
+// startServer();
