@@ -25,8 +25,8 @@ fs.readFile(filePath, (err, fileContent) => {
 //   console.log(fileContent);
 // });
 
-import fs from 'fs/promises';
-import path from 'node:path';
+// import fs from 'fs/promises';
+// import path from 'node:path';
 
 // Читання файлу
 // const filePath = path.join(process.cwd(), 'src', 'text.txt');
@@ -102,29 +102,29 @@ import path from 'node:path';
 // })();
 
 // Отримуємо список файлів і каталогів у поточному каталозі
-(async () => {
-  try {
-    const files = await fs.readdir('./src');
-    console.log('Список файлів і каталогів:', files);
-  } catch (err) {
-    console.error('Помилка отримання списку файлів і каталогів:', err);
-  }
-})();
+// (async () => {
+//   try {
+//     const files = await fs.readdir('./src');
+//     console.log('Список файлів і каталогів:', files);
+//   } catch (err) {
+//     console.error('Помилка отримання списку файлів і каталогів:', err);
+//   }
+// })();
 
 // Перевіряємо доступність файлу або каталогу за вказаним шляхом
-(async () => {
-  const projectPath = path.join(process.cwd(), 'src');
-  try {
-    await fs.access(projectPath);
-    console.log(`Файл або каталог '${projectPath}' доступний.`);
-  } catch (err) {
-    if (err.code === 'ENOENT') {
-      console.log(`Файл або каталог '${projectPath}' не існує.`);
-    } else {
-      console.error(
-        `Помилка перевірки доступності файлу або каталогу '${projectPath}':`,
-        err,
-      );
-    }
-  }
-})();
+// (async () => {
+//   const projectPath = path.join(process.cwd(), 'src');
+//   try {
+//     await fs.access(projectPath);
+//     console.log(`Файл або каталог '${projectPath}' доступний.`);
+//   } catch (err) {
+//     if (err.code === 'ENOENT') {
+//       console.log(`Файл або каталог '${projectPath}' не існує.`);
+//     } else {
+//       console.error(
+//         `Помилка перевірки доступності файлу або каталогу '${projectPath}':`,
+//         err,
+//       );
+//     }
+//   }
+// })();

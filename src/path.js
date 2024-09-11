@@ -1,7 +1,7 @@
-import path from 'node:path';
+// import path from 'node:path';
 
-const workDir = path.join(process.cwd(), 'src', 'text.txt');
+// const workDir = path.join(process.cwd(), 'src', 'text.txt');
 
-console.log(workDir);
+// console.log(workDir);
 
-console.log(path.parse(workDir));
+// console.log(path.parse(workDir));
