@@ -37,7 +37,7 @@ export const startServer = () => {
 
     res.status(200).json({
       status: 200,
-      message: 'Successfully found contacts!',
+      message: 'Successfully found students!',
       data: students,
     });
   });
@@ -57,7 +57,7 @@ export const startServer = () => {
     // Відповідь, якщо контакт знайдено
     res.status(200).json({
       status: 200,
-      message: 'Successfully found contact with id {studentId}!',
+      message: 'Successfully found student with id {studentId}!',
       data: student,
     });
   });
