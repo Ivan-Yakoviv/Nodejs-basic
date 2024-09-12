@@ -57,7 +57,7 @@ export const startServer = () => {
     // Відповідь, якщо контакт знайдено
     res.status(200).json({
       status: 200,
-      message: 'Successfully found student with id {studentId}!',
+      message: `Successfully found student with id ${studentId}!`,
       data: student,
     });
   });
